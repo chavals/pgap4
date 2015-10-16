@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <title>Interactuando</title>
+		
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+		
+		<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		header nav {
+			background: #023859;
+			z-index: 1000;
+			max-width: 1100px;
+			width: 95%;
+			margin: 20px auto;
+		}
+
+		header nav ul {
+			list-style: none;
+		}
+
+		header nav ul li {
+			display: inline-block;
+			position: relative;
+		}
+
+		header nav ul li a {
+			color: #fff;
+			display: block;
+			text-decoration: none;
+			padding: 20px;
+		}
+
+		header nav ul li .children {
+			display: none;
+			background: #011826;
+			position: absolute;
+			width: 150%;
+			z-index: 1000;
+		}
+
+		header nav ul li .children li {
+			display: block;
+			overflow: hidden;
+			border-bottom: 1px solid rgba(255,255,255,.5);
+		}
+
+		header nav ul li .children li a {
+			display: block;
+		}
+
+		header nav ul li a span {
+			margin-right: 10px;
+		}
+
+		header nav ul li .children li a span {
+			float: right;
+			position: relative;
+			top: 3px;
+			margin-right: 0;
+			margin-left: 10px;
+		}
+
+		header nav ul li .caret {
+			position: relative;
+			top: 3px;
+			margin-left: 10px;
+			margin-right: 0px;
+		}
+
+		header nav ul li:hover {
+			background: #E6344A;
+		}
+			
+
+			.menu_bar {
+				display: block;
+				width: 100%;
+				position: fixed;
+				top: 0;
+				background: #E6344A;
+			}
+			
+			.menu_bar .bt-menu {
+				display: block;
+				padding: 20px;
+				color: #fff;
+				overflow: hidden;
+				font-size: 25px;
+				font-weight: bold;
+				text-decoration: none;
+			}
+			
+			.menu_bar span {
+				float: right;
+				font-size: 40px;
+			}
+			
+			header nav {
+				width: 80%;
+				height: calc(100% - 80px);
+				top: 80px;
+				position: fixed;
+				right: 100%;
+				margin: 0;
+				overflow-y: scroll;
+				left: -100%;
+			}
+			
+			header nav ul li {
+				display: block;
+				border-bottom: 1px solid rgba(255,255,255,.5);
+			}
+			
+			header nav ul li a {
+				display: block;
+			}
+			
+			header nav ul li .children {
+				width: 100%;
+				position: relative;
+			}
+			
+			header nav ul li .children li a {
+				margin-left: 20px;
+			}
+			
+			header nav ul li .caret {
+				float: right;
+			}
+			
+			header .bg_nav {
+				background-color: black;
+				width: 100%;
+				height: 100%;
+				display: block;
+				z-index: 950;
+				top: 80px;
+				left: 0px;
+				bottom: 0px;
+				right: 0px;
+				margin: 0px;
+				padding: 0px;
+				overflow: hidden;
+				position: fixed;
+				opacity: 0.7;
+				display: none;
+			}
+
+
+
+		[class^="icon-"], [class*=" icon-"] {
+			font-family: 'icomoon';
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+
+		.icon-menu:before {
+			content: "\e61f";
+		}
+		
+		#content {
+			margin-top: 80px;
+		}
+		
+		</style>
+		
+    </head>
+    <body style="margin:0px; padding:0px;">
+		<header id="myheader">
+			<div class="menu_bar">
+				<a href="#" class="bt-menu"><span class="icon-menu"></span>Menu</a>
+			</div>
+			
+			<nav>
+				<ul>
+					<li><a href="#" rel="http://www.interactuando.es"><span class="icon-home3"></span>Inicio</a></li>
+					
+					<li><a href="login.html"><span class="icon-home3"></span>Acceder</a></li>
+					<li><a href="registro.html"><span class="icon-home3"></span>Registrarse</a></li>
+					
+					
+					<!--
+					<li class="submenu">
+						<a href="#"><span class="icon-cart"></span>DESCUENTOS<span class="caret icon-circle-down"></span></a>
+						<ul class="children">
+							<li><a href="tiendasdto.php">Cupnoes DESCUENTOS<span class=""></span></a></li>
+							<li><a href="http://action.metaffiliation.com/trk.php?mclic=P4A91B480882131" target="LTO">AliExpress<span class=""></span></a></li><li><a href="http://clk.tradedoubler.com/click?p=206848&amp;a=2102520&amp;g=19703746" target="LTO">Amazon-BuyVip<span class=""></span></a></li><li><a href="http://clk.tradedoubler.com/click?p(261352)a(2102520)g(22544740)" target="LTO">Banggood<span class=""></span></a></li><li><a href="http://clk.tradedoubler.com/click?p(241330)a(2102520)g(21437886)" target="LTO">Groupalia<span class=""></span></a></li><li><a href="https://clk.tradedoubler.com/click?p=264866&amp;a=2102520&amp;g=22808482" target="LTO">Groupon<span class=""></span></a></li><li><a href="http://clk.tradedoubler.com/click?p(196182)a(2102520)g(19069966)" target="LTO">Lets-bonus<span class=""></span></a></li><li><a href="http://clk.tradedoubler.com/click?p(202060)a(352154)g(19420550)" target="LTO">Offerum<span class=""></span></a></li>	
+							<li><a href="nuestrastiendas.php">Buscar X Tienda<span class=""></span></a></li>
+							<li><a href="nuestrasmarcas.php">Buscar X Marca<span class=""></span></a></li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="#"><span class="icon-airplane"></span>Viajes<span class="caret icon-circle-down"></span></a>
+						<ul class="children">
+							<li><a href="alquiler.php">Alquiler de coches<span class=""></span></a></li>
+							<li><a href="cruceros.php">Cruceros<span class=""></span></a></li>
+							<li><a href="hoteles.php">Hoteles<span class=""></span></a></li>
+							<li><a href="viajes.php">Viajes<span class=""></span></a></li>
+							<li><a href="vuelos.php">Vuelos<span class=""></span></a></li>
+							<li><a href="tiendasdto.php">Tiendas Dto<span class=""></span></a></li>
+							<li><a href="nuestrastiendas.php">Buscar X Tienda<span class=""></span></a></li>
+							<li><a href="nuestrasmarcas.php">Buscar X Marca<span class=""></span></a></li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="#&quot;"><span class="icon-t-shirt"></span>Moda<span class="caret icon-circle-down"></span></a>
+						<ul class="children">
+							<li><a href="bebe.php">Bebé <span class=""></span></a></li>
+							<li><a href="calzado.php">Calzado<span class=""></span></a></li>
+							<li><a href="complementos.php">Complementos <span class=""></span></a></li>
+							<li><a href="mujerhombre.php">Hombre y Mujer <span class=""></span></a></li>
+							<li><a href="nino.php">Niñ@<span class=""></span></a></li>
+							<li><a href="tiendasdto.php">Tiendas Dto<span class=""></span></a></li>
+							<li><a href="nuestrastiendas.php">Buscar X Tienda<span class=""></span></a></li>
+							<li><a href="nuestrasmarcas.php">Buscar X Marca<span class=""></span></a></li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="#"><span class="icon-gift"></span>Ocio<span class="caret icon-circle-down"></span></a>
+						<ul class="children">
+							<li><a href="arte.php">Arte <span class=""></span></a></li>
+							<li><a href="deportes.php">Deportes<span class=""></span></a></li>
+							<li><a href="entradas.php">Entradas <span class=""></span></a></li>
+							<li><a href="libros.php">Libros <span class=""></span></a></li>
+							<li><a href="restaurantes.php">Restaurantes <span class=""></span></a></li>					
+							<li><a href="tiendasdto.php">Tiendas Dto<span class=""></span></a></li>
+							<li><a href="nuestrastiendas.php">Buscar X Tienda<span class=""></span></a></li>
+							<li><a href="nuestrasmarcas.php">Buscar X Marca<span class=""></span></a></li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="#"><span class="icon-cart"></span>Shoping<span class="caret icon-circle-down"></span></a>
+						<ul class="children">
+							<li><a href="alimentacion.php">Alimentación<span class=""></span></a></li>
+							<li><a href="automocion.php">Automoción <span class=""></span></a></li>
+							<li><a href="banca.php">Banca<span class=""></span></a></li>
+							<li><a href="cursos.php">Cursos<span class=""></span></a></li>
+							<li><a href="deportes.php">Deportes<span class=""></span></a></li>
+							<li><a href="hogar.php">Hogar<span class=""></span></a></li>         
+							<li><a href="juguetes.php">Juguetes<span class=""></span></a></li>
+							<li><a href="juguetes.php">Juguetes<span class=""></span></a></li>
+							<li><a href="papeleria.php">Papelería<span class=""></span></a></li>
+							<li><a href="salud.php">Salud<span class=""></span></a></li>
+							<li><a href="tecnologia.php">Tecnología<span class=""></span></a></li>
+							<li><a href="tiendasdto.php">Tiendas Dto<span class=""></span></a></li>
+							<li><a href="nuestrastiendas.php">Buscar X Tienda<span class=""></span></a></li>
+							<li><a href="nuestrasmarcas.php">Buscar X Marca<span class=""></span></a></li>
+						</ul>
+					</li>
+					<li><a href="contacto.php"><span class="icon-mail"></span>Contacto</a></li>
+					-->
+				</ul>
+				
+			</nav>
+			<div class="bg_nav"></div>
+		</header>
+
+		<div id="content">
+			<iframe src="http://www.interactuando.es" style="position:fixed; top:80px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:900;" id="pagina">
+				Your browser doesn't support iframes
+			</iframe>
+		</div>
+		
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#capa").html("hola");
+				$("#boton").on("click", function (){
+					$("#capa").html("cambiado");
+				});
+				
+				$('form').submit(function(){
+					var landmarkID = $(this).parent().attr('data-landmark-id');
+					var postData = $(this).serialize();
+					
+					$.ajax({
+						type: 'POST',
+						data: postData+'&lid='+landmarkID,
+						url: 'http://www.doblerc.com/prueba/webapp/save.php',
+						success: function(data){
+							console.log(data);
+							alert('Your comment was successfully added');
+						},
+						error: function(){
+							console.log(data);
+							alert('There was an error adding your comment');
+						}
+					});
+					
+					return false;
+				});
+				
+				
+			});
+		</script>
+		
+		<script type="text/javascript">
+			$(document).ready(main);
+			var contador = 1;
+			function main () {
+				$('.menu_bar').click(function(){
+					if (contador == 1) {
+						$('.bg_nav').show();
+						$('nav').animate({
+							left: '0'
+						});
+						
+						contador = 0;
+					} else {
+						contador = 1;
+						$('nav').animate({
+							left: '-100%'
+						});
+						$('.bg_nav').hide();
+					}
+				});
+				
+				$('.bg_nav').click(function(){
+					ocultaSidebar();
+				});
+				
+				function ocultaSidebar(){
+					contador = 1;
+					$('nav').animate({
+						left: '-100%'
+					});
+					$('.bg_nav').hide();
+					console.log("ocultaaar");
+				}
+			 
+				// Mostramos y ocultamos submenus
+				$('.submenu').click(function(){
+					$(this).children('.children').slideToggle();
+				});
+				
+				$('nav ul li a').click(function () {
+					var url = $(this).attr('rel');
+					$('#pagina').attr('src', url);
+					ocultaSidebar();
+				});
+			}
+			
+		</script>
+    </body>
+</html>
