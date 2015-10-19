@@ -189,7 +189,24 @@
 		<script type="text/javascript" src="js/libs/GALocalStorage.js"></script>
 <script>
     ga_storage._setAccount('UA-31185677-1'); //Replace with your own
-   ga_storage._trackPageview('/index.html');
+   //ga_storage._trackPageview('/index.html');
+   
+   //google analytics
+$('[data-role=page]').on('pageshow', function (event, ui) {
+    console.log('google analytics pageshow')
+    try {
+        page = location.href.replace(/.*\//,'/')
+        if (page && page.length > 1) {
+            console.log('google analytics pageshow url :'+page)
+            ga_storage._trackPageview(page);
+        } else {
+            console.log('google analytics pageshow default url')
+            ga_storage._trackPageview();
+        }
+    } catch(err){
+        console.log('error google analytics '+err)
+    }
+});
 
 </script>
 		
