@@ -185,10 +185,12 @@
 		}
 		
 		</style>
-		<script type="text/javascript" src="js/libs/GALocalStorage.js"></script>
+		<script type="text/javascript" src="js/ga.js"></script>
 		<script>
-			ga_storage._setAccount('UA-31185677-1');
-			ga_storage._trackPageview('/login.html');
+	 var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-31185677-1']);
+		_gaq.push(['_setDomainName', 'none']);
+		_gaq.push(['_trackPageview', 'login']);
 		</script>
     </head>
     <body style="margin:0px; padding:0px;">
