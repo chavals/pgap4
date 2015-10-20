@@ -192,11 +192,14 @@
 			console.log("READYYY");
 				ga_storage._setAccount('UA-31185677-1'); //Replace with your own
 				ga_storage._setDomain('none');
+				ga_storage._disableSSL();
 				//google analytics
 				try {
 					page = location.href.replace(/.*\//,'/');
+					console.log("A VERR " + page);
 					if (page && page.length > 1) {
 						ga_storage._trackPageview(page);
+						console.log("GOO " + page);
 					} else {
 						ga_storage._trackPageview();
 					}
@@ -215,7 +218,7 @@
 			
 			<nav>
 				<ul>
-					<li><a href="#" rel="http://www.interactuando.es"><span class="icon-home3"></span>Inicio</a></li>
+					<li><a href="#" rel="http://gestion.gruporeporte.es"><span class="icon-home3"></span>Inicio</a></li>
 					
 					<li><a href="login.html"><span class="icon-home3"></span>Acceder</a></li>
 					<li><a href="registro.html"><span class="icon-home3"></span>Registrarse</a></li>
@@ -298,7 +301,7 @@
 		</header>
 
 		<div id="content">
-			<iframe src="http://www.interactuando.es" style="position:fixed; top:80px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:900;" id="pagina">
+			<iframe src="http://gestion.gruporeporte.es" style="position:fixed; top:80px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:900;" id="pagina">
 				Your browser doesn't support iframes
 			</iframe>
 		</div>
@@ -337,51 +340,50 @@
 		</script>
 		
 		<script type="text/javascript">
-			$(document).ready(main);
-			var contador = 1;
-			function main () {
-				$('.menu_bar').click(function(){
-					if (contador == 1) {
-						$('.bg_nav').show();
-						$('nav').animate({
-							left: '0'
-						});
-						
-						contador = 0;
-					} else {
-						contador = 1;
-						$('nav').animate({
-							left: '-100%'
-						});
-						$('.bg_nav').hide();
+			$(document).ready(function() {
+
+				$('.menu_bar').unbind("click").on("click", function(){
+					if ($("nav").css("left") == "0px"){
+						ocultaSidebar();
+					}else{
+						mostrarSidebar();
 					}
 				});
 				
-				$('.bg_nav').click(function(){
+				console.log("inicio: " + $("nav").css("left"));
+				
+				$('.bg_nav').unbind("click").on("click", function(){
 					ocultaSidebar();
 				});
 				
 				function ocultaSidebar(){
-					contador = 1;
 					$('nav').animate({
 						left: '-100%'
 					});
 					$('.bg_nav').hide();
-					console.log("ocultaaar");
+					console.log("ocultaaar " + $("nav").css("left"));
+				}
+				
+				function mostrarSidebar(){
+					$('.bg_nav').show();
+					$('nav').animate({
+						left: '0'
+					});
+					console.log("mostraaar " + $("nav").css("left"));
 				}
 			 
 				// Mostramos y ocultamos submenus
-				$('.submenu').click(function(){
+				$('.submenu').unbind("click").on("click", function(){
 					$(this).children('.children').slideToggle();
 				});
 				
-				$('nav ul li a').click(function () {
+				$('nav ul li a').unbind("click").on("click", function () {
 					var url = $(this).attr('rel');
 					$('#pagina').attr('src', url);
 					ocultaSidebar();
 				});
-			}
-			
+				
+			});
 		</script>
     </body>
 </html>
