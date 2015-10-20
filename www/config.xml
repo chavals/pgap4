@@ -72,8 +72,6 @@
 	<gap:plugin name="org.apache.cordova.media-capture" source="pgb" version="0.3.3" />
 	<gap:plugin name="org.apache.cordova.network-information" source="pgb" version="0.2.12" />
 	<gap:plugin name="org.apache.cordova.splashscreen" source="pgb" version="0.3.4" />
-	
-	<gap:plugin name="com.adobe.plugins.gaplugin" version="2.3.1" />
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
